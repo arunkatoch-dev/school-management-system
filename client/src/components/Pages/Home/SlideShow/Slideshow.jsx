@@ -2,9 +2,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
-import classroom from "../../../../assets/classroom.webP";
-import students from "../../../../assets/students.webP";
-import library from "../../../../assets/library.webP";
+import classroom from "../../../../assets/classroom.webp";
+import students from "../../../../assets/students.webp";
+import library from "../../../../assets/library.webp";
 
 const Slideshow = () => {
   return (
