@@ -1,4 +1,4 @@
-export const baseURL = "http://localhost:8080/";
+export const baseURL = "https://school-management-system-dy5j.onrender.com";
 export const frontEndURL = "http://localhost:5173/";
 export const schoolName = "Model Public School";
 export const newAdmissionComponentStyles = {
