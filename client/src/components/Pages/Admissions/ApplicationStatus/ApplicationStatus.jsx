@@ -9,8 +9,8 @@ const DownloadPreview = lazy(() =>
   import("./DownloadApplication/DownloadPreview")
 );
 const MsgPopup = lazy(() => import("../../../MsgPopup"));
-import UsePdfGenerator from "../../../CustomHooks/usePdfGenerator";
 import FullPageLoader from "../../../Loaders/FullPageLoader";
+import UsePdfGenerator from "../../../CustomHooks/UsePdfGenerator";
 
 const ApplicationStatus = () => {
   const {
