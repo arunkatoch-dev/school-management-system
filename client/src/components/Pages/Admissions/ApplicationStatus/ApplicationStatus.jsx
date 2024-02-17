@@ -8,9 +8,10 @@ import { Navigate } from "react-router-dom";
 const DownloadPreview = lazy(() =>
   import("./DownloadApplication/DownloadPreview")
 );
-const MsgPopup = lazy(() => import("../../../MsgPopup"));
+
 import FullPageLoader from "../../../Loaders/FullPageLoader";
 import UsePdfGenerator from "../../../CustomHooks/UsePdfGenerator";
+import MsgPopup from "../../../MsgPopup";
 
 const ApplicationStatus = () => {
   const {

@@ -17,13 +17,12 @@ import {
 import { Suspense, lazy, useEffect, useState } from "react";
 import FullPageLoader from "../../Loaders/FullPageLoader";
 import MsgPopup from "../../MsgPopup";
-// import { checkAdminLoginStatus } from "../../../slices/adminAuthSlice";
 const FullDetails = lazy(() => import("./FullDetails"));
 
 const AdminHomepage = () => {
   const [studentClass, setStudentClass] = useState("");
   const [searchVal, setSearchVal] = useState("");
- 
+
   const {
     isCurrentSessionDataLoading,
     studentsData,
@@ -56,7 +55,6 @@ const AdminHomepage = () => {
     dispatch(confirmSession(true));
   };
 
-
   useEffect(() => {
     dispatch(getAdminData());
     const currentSession = localStorage.getItem("currentSession");
@@ -80,7 +78,6 @@ const AdminHomepage = () => {
             onClick={(e) => {
               e.preventDefault();
               dispatch(toggleSessionWindow());
-              console.log("working")
             }}
           >
             <FaEdit className="text-lg text-gray-600 hover:text-gray-700 font-bold" />
@@ -175,7 +172,9 @@ const AdminHomepage = () => {
               </button>
               <div
                 className={
-                  toggleConfirmBoxDisplay ? "flex flex-col px-4 py-2 border" : "hidden"
+                  toggleConfirmBoxDisplay
+                    ? "flex flex-col px-4 py-2 border"
+                    : "hidden"
                 }
               >
                 <span className="text-center text-base text-red-600">

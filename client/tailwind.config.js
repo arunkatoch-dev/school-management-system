@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        primaryFont: ["Blinker", "sans-serif"],
-        secondaryFont: ["Tilt Warp", "cursive"],
+        primaryFont: ["sans-serif"],
+        secondaryFont: ["sans-serif"],
       },
       colors: {
         primary: "#FFB6B9",
