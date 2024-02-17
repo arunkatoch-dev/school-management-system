@@ -6,7 +6,7 @@ const DisplayAdmissions = lazy(() =>
 import AdminAdmissionPreview from "./DisplayAdmissions/AdminAdmissionPreview";
 import { useSelector } from "react-redux";
 
-const Admissions = () => {
+const AdminAdmissions = () => {
   const toggleAdminAdmissionPanel = useSelector(
     (state) => state.admissionFormSlice.toggle_Admin_Admission_Panel_Preview
   );
@@ -28,4 +28,4 @@ const Admissions = () => {
   );
 };
 
-export default Admissions;
+export default AdminAdmissions;

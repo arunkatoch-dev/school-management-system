@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import React, { Suspense, lazy } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import "./index.css";
@@ -9,267 +9,63 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-// const Layout = lazy(() => import("./Layout/Layout"));
 import Layout from "./Layout/Layout";
 import Login from "./components/Pages/Login/Login";
-const About = lazy(() => import("./components/Pages/About/About"));
-const Contact = lazy(() => import("./components/Pages/Contact/Contact"));
-const Admissions = lazy(() =>
-  import("./components/Pages/Admissions/Admissions")
-);
-// const Login = lazy(() => import("./components/Pages/Login/Login"));
-const AdminPanel = lazy(() => import("./components/Admin/AdminPanel"));
-const AdminAdmissions = lazy(() =>
-  import("./components/Admin/Admissions/Admissions")
-);
-import store from "./store/store";
-import FullPageLoader from "./components/Loaders/FullPageLoader";
 import StudentRegister from "./components/Pages/Register/StudentRegister";
-// const AdminLogin = lazy(() =>
-//   import("./components/Admin/AdminAuth/AdminLogin")
-// );
-const SetNoticeBoard = lazy(() =>
-  import("./components/Admin/SetNoticeBoard/SetNoticeBoard")
-);
-const SetEventsBoard = lazy(() =>
-  import("./components/Admin/setEventsBoard/SetEventsBoard")
-);
-const SetAchievementsBoard = lazy(() =>
-  import("./components/Admin/SetAchievementsBoard/SetAchievementsBoard")
-);
-const LatestInformation = lazy(() =>
-  import(
-    "./components/Pages/Admissions/ApplicationStatus/LatestInformation/LatestInformation"
-  )
-);
-const Prospectus = lazy(() =>
-  import(
-    "./components/Pages/Admissions/ApplicationStatus/Prospectus/Prospectus"
-  )
-);
-const AdmissionsHomePage = lazy(() =>
-  import("./components/Pages/Admissions/AdmissionsHomepage/AdmissionsHomePage")
-);
-const AdmissionForm = lazy(() =>
-  import("./components/Pages/Admissions/AdmissionForm")
-);
-const ChooseClass = lazy(() =>
-  import("./components/Pages/Admissions/ChooseClass")
-);
-const AcademicCalander = lazy(() =>
-  import(
-    "./components/Pages/Admissions/ApplicationStatus/AcademicCalander/AcademicCalander"
-  )
-);
-const AdminHomepage = lazy(() =>
-  import("./components/Admin/AdminHomepage/AdminHomepage")
-);
-const ApplicationStatus = lazy(() =>
-  import("./components/Pages/Admissions/ApplicationStatus/ApplicationStatus")
-);
-const StudentDetails = lazy(() =>
-  import("./components/Pages/Admissions/StudentDetails/StudentDetails")
-);
-const PaymentsHomepage = lazy(() =>
-  import("./components/Pages/PayFee/PaymentsHomepage")
-);
-const PaymentSuccess = lazy(() =>
-  import("./components/Pages/PayFee/PaymentSuccess")
-);
-const PaymentCancel = lazy(() =>
-  import("./components/Pages/PayFee/PaymentCancel")
-);
-const StripeCheckout = lazy(() =>
-  import("./components/Pages/Stripe/StripeCheckout")
-);
-const AllPayments = lazy(() =>
-  import("./components/Pages/Payment Details/AllPayments")
-);
+import store from "./store/store";
+import About from "./components/Pages/About/About";
+import Contact from "./components/Pages/Contact/Contact";
+import Admissions from "./components/Pages/Admissions/Admissions";
+import AdmissionsHomePage from "./components/Pages/Admissions/AdmissionsHomepage/AdmissionsHomePage";
+import LatestInformation from "./components/Pages/Admissions/ApplicationStatus/LatestInformation/LatestInformation";
+import Prospectus from "./components/Pages/Admissions/ApplicationStatus/Prospectus/Prospectus";
+import ChooseClass from "./components/Pages/Admissions/ChooseClass";
+import ApplicationStatus from "./components/Pages/Admissions/ApplicationStatus/ApplicationStatus";
+import AdmissionForm from "./components/Pages/Admissions/AdmissionForm";
+import AcademicCalander from "./components/Pages/Admissions/ApplicationStatus/AcademicCalander/AcademicCalander";
+import StudentDetails from "./components/Pages/Admissions/StudentDetails/StudentDetails";
+import PaymentsHomepage from "./components/Pages/PayFee/PaymentsHomepage";
+import AllPayments from "./components/Pages/Payment Details/AllPayments";
+import AdminPanel from "./components/Admin/AdminPanel";
+import AdminHomepage from "./components/Admin/AdminHomepage/AdminHomepage";
+import SetNoticeBoard from "./components/Admin/SetNoticeBoard/SetNoticeBoard";
+import SetEventsBoard from "./components/Admin/setEventsBoard/SetEventsBoard";
+import SetAchievementsBoard from "./components/Admin/SetAchievementsBoard/SetAchievementsBoard";
+import AdminAdmissions from "./components/Admin/Admissions/AdminAdmissions";
+import StripeCheckout from "./components/Pages/Stripe/StripeCheckout";
+import PaymentSuccess from "./components/Pages/PayFee/PaymentSuccess";
+import PaymentCancel from "./components/Pages/PayFee/PaymentCancel";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<Layout />} />
-      <Route
-        path="/about"
-        element={
-          <Suspense fallback={<FullPageLoader />}>
-            <About />
-          </Suspense>
-        }
-      />
-      <Route
-        path="/contact"
-        element={
-          <Suspense fallback={<FullPageLoader />}>
-            <Contact />
-          </Suspense>
-        }
-      />
-      <Route
-        path="/admissions"
-        element={
-          <Suspense fallback={<FullPageLoader />}>
-            <Admissions />
-          </Suspense>
-        }
-      >
-        <Route
-          path=""
-          element={
-            <Suspense fallback={<FullPageLoader />}>
-              <AdmissionsHomePage />
-            </Suspense>
-          }
-        />
-        <Route
-          path="latestInformation"
-          element={
-            <Suspense fallback={<FullPageLoader />}>
-              <LatestInformation />
-            </Suspense>
-          }
-        />
-        <Route
-          path="prospectus"
-          element={
-            <Suspense fallback={<FullPageLoader />}>
-              <Prospectus />
-            </Suspense>
-          }
-        />
-        <Route
-          path="newAdmission"
-          element={
-            <Suspense fallback={<FullPageLoader />}>
-              <ChooseClass />
-            </Suspense>
-          }
-        />
-        <Route
-          path="admissionStatus"
-          element={
-            <Suspense fallback={<FullPageLoader />}>
-              <ApplicationStatus />
-            </Suspense>
-          }
-        />
-        <Route
-          path=":class"
-          element={
-            <Suspense fallback={<FullPageLoader />}>
-              <AdmissionForm />
-            </Suspense>
-          }
-        />
-        <Route
-          path="academicCalander"
-          element={
-            <Suspense fallback={<FullPageLoader />}>
-              <AcademicCalander />
-            </Suspense>
-          }
-        />
-        <Route
-          path="studentDetails"
-          element={
-            <Suspense fallback={<FullPageLoader />}>
-              <StudentDetails />
-            </Suspense>
-          }
-        />
-        <Route
-          path="paymentsHomepage"
-          element={
-            <Suspense fallback={<FullPageLoader />}>
-              <PaymentsHomepage />
-            </Suspense>
-          }
-        />
-        <Route
-          path="allpayments"
-          element={
-            <Suspense fallback={<FullPageLoader />}>
-              <AllPayments />
-            </Suspense>
-          }
-        />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/admissions" element={<Admissions />}>
+        <Route path="" element={<AdmissionsHomePage />} />
+        <Route path="latestInformation" element={<LatestInformation />} />
+        <Route path="prospectus" element={<Prospectus />} />
+        <Route path="newAdmission" element={<ChooseClass />} />
+        <Route path="admissionStatus" element={<ApplicationStatus />} />
+        <Route path=":class" element={<AdmissionForm />} />
+        <Route path="academicCalander" element={<AcademicCalander />} />
+        <Route path="studentDetails" element={<StudentDetails />} />
+        <Route path="paymentsHomepage" element={<PaymentsHomepage />} />
+        <Route path="allpayments" element={<AllPayments />} />
       </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/studentregister" element={<StudentRegister />} />
-      <Route
-        path="/admin"
-        element={
-          <Suspense fallback={<FullPageLoader />}>
-            <AdminPanel />
-          </Suspense>
-        }
-      >
-        <Route
-          path=""
-          element={
-            <Suspense fallback={<FullPageLoader />}>
-              <AdminHomepage />
-            </Suspense>
-          }
-        />
-        <Route
-          path="noticeboard"
-          element={
-            <Suspense fallback={<FullPageLoader />}>
-              <SetNoticeBoard />
-            </Suspense>
-          }
-        />
-        <Route
-          path="eventsboard"
-          element={
-            <Suspense fallback={<FullPageLoader />}>
-              <SetEventsBoard />
-            </Suspense>
-          }
-        />
-        <Route
-          path="achievementsboard"
-          element={
-            <Suspense fallback={<FullPageLoader />}>
-              <SetAchievementsBoard />
-            </Suspense>
-          }
-        />
-        <Route
-          path="admissions"
-          element={
-            <Suspense fallback={<FullPageLoader />}>
-              <AdminAdmissions />
-            </Suspense>
-          }
-        />
+      <Route path="/admin" element={<AdminPanel />}>
+        <Route path="" element={<AdminHomepage />} />
+        <Route path="noticeboard" element={<SetNoticeBoard />} />
+        <Route path="eventsboard" element={<SetEventsBoard />} />
+        <Route path="achievementsboard" element={<SetAchievementsBoard />} />
+        <Route path="admissions" element={<AdminAdmissions />} />
       </Route>
-      <Route
-        path="/stripe-checkout"
-        element={
-          <Suspense fallback={<FullPageLoader />}>
-            <StripeCheckout />
-          </Suspense>
-        }
-      />
-      <Route
-        path="/paymentSuccess"
-        element={
-          <Suspense fallback={<FullPageLoader />}>
-            <PaymentSuccess />
-          </Suspense>
-        }
-      />
-      <Route
-        path="/paymentCancel"
-        element={
-          <Suspense fallback={<FullPageLoader />}>
-            <PaymentCancel />
-          </Suspense>
-        }
-      />
+      <Route path="/stripe-checkout" element={<StripeCheckout />} />
+      <Route path="/paymentSuccess" element={<PaymentSuccess />} />
+      <Route path="/paymentCancel" element={<PaymentCancel />} />
     </>
   )
 );
