@@ -5,7 +5,7 @@ import {
   previewApplicationStyles,
   schoolName,
 } from "../../../constants";
-import UsePdfGenerator from "../../../CustomHooks/usePdfGenerator";
+import UsePdfGenerator from "../../../CustomHooks/UsePdfGenerator";
 
 const DownloadStudentDetail = () => {
   const studentSessionDetailsDownload = useSelector(
