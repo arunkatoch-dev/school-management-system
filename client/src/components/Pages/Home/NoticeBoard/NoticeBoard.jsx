@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getNotifications } from "../../../../slices/noticeBoardSlice";
-import BoardSkeleton from "../../../Skeletons/Boards/BoardSkeleton";
+import FullPageLoader from "../../../Loaders/FullPageLoader";
 
 const NoticeBoard = () => {
   const notifications = useSelector((state) => state.noticeBoard.notifications);
@@ -23,7 +23,7 @@ const NoticeBoard = () => {
   return (
     <>
       {notificationLoading ? (
-        <BoardSkeleton />
+        <FullPageLoader />
       ) : (
         <section className="w-full md:w-[50%] h-[30rem] border flex flex-col items-center justify-center shadow-xl">
           <div className="w-full py-2 flex items-center justify-center bg-secondary">

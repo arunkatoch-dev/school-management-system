@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAchievements } from "../../../../slices/achievementsBoardSlice";
 import { useEffect } from "react";
 import { baseURL } from "../../../constants";
-import AchievementsBoardSkeleton from "../../../Skeletons/Boards/AchievementsBoardSkeleton";
+import FullPageLoader from "../../../Loaders/FullPageLoader";
 
 const HomeAchievements = () => {
   const { achievements, isAchievementsLoading, deleteState, newAchievement } =
@@ -21,7 +21,7 @@ const HomeAchievements = () => {
   return (
     <>
       {isAchievementsLoading ? (
-        <AchievementsBoardSkeleton />
+        <FullPageLoader />
       ) : (
         <section className="w-full md:w-[40%] flex flex-col h-full">
           <div className="w-full flex items-center justify-center">

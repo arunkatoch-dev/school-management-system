@@ -6,7 +6,8 @@ import {
   deleteNoticeReducer,
 } from "../../../../slices/noticeBoardSlice";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
-import AdminBoardSkeleton from "../../Skeletons/AdminBoardSkeleton";
+import FullPageLoader from "../../../Loaders/FullPageLoader";
+
 
 const DisplayNotificatons = () => {
   const { notifications, updateState, deleteState, isNotificationsLoading } =
@@ -21,7 +22,7 @@ const DisplayNotificatons = () => {
   return (
     <div className="w-full h-full bg-gray-100 px-2 py-3 overflow-y-auto">
       {isNotificationsLoading ? (
-        <AdminBoardSkeleton />
+        <FullPageLoader />
       ) : (
         notifications.map((currNotification, index) => {
           return (

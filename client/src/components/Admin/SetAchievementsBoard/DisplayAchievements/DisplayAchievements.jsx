@@ -1,5 +1,4 @@
 import { AiFillDelete } from "react-icons/ai";
-import AdminBoardSkeleton from "../../Skeletons/AdminBoardSkeleton";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import {
@@ -7,6 +6,7 @@ import {
   getAchievements,
 } from "../../../../slices/achievementsBoardSlice";
 import { baseURL } from "../../../constants";
+import FullPageLoader from "../../../Loaders/FullPageLoader";
 
 const DisplayAchievements = () => {
   const {
@@ -27,7 +27,7 @@ const DisplayAchievements = () => {
   return (
     <div className="w-full h-full bg-gray-100 px-2 py-3 overflow-y-auto">
       {isAchievementsLoading ? (
-        <AdminBoardSkeleton />
+        <FullPageLoader />
       ) : (
         achievements.map((currAchievement, index) => {
           return (

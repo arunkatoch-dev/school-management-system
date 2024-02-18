@@ -1,12 +1,9 @@
-// import { Suspense } from "react";
-// import AdminBoardSkeleton from "../Skeletons/AdminBoardSkeleton";
 import { Suspense } from "react";
 import NewAchievement from "./DisplayAchievements/NewAchievement";
 import Toolbar from "./DisplayAchievements/Toolbar/Toolbar";
-import AdminBoardSkeleton from "../Skeletons/AdminBoardSkeleton";
 import DisplayAchievements from "./DisplayAchievements/DisplayAchievements";
 import DeleteAchievement from "./DisplayAchievements/DeleteAchievement";
-// import EditAchievement from "./DisplayAchievements/EditAchievement";
+import FullPageLoader from "../../Loaders/FullPageLoader";
 
 const SetAchievementsBoard = () => {
   return (
@@ -21,7 +18,7 @@ const SetAchievementsBoard = () => {
         <Toolbar />
         <NewAchievement />
         <DeleteAchievement />
-        <Suspense fallback={<AdminBoardSkeleton />}>
+        <Suspense fallback={<FullPageLoader />}>
           <DisplayAchievements />
         </Suspense>
       </div>

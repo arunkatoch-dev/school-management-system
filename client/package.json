@@ -22,7 +22,6 @@
     "react-icons": "^4.11.0",
     "react-redux": "^8.1.2",
     "react-router-dom": "^6.16.0",
-    "react-skeleton-generator": "^1.1.3",
     "spinners-react": "^1.0.7",
     "swiper": "^10.3.0",
     "tailwind-scrollbar": "^3.0.5",

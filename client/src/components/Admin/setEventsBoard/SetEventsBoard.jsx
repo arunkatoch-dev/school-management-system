@@ -1,10 +1,10 @@
 import { Suspense, lazy } from "react";
 const DisplayEvents = lazy(() => import("./DisplayEvents/DisplayEvents"));
-import AdminBoardSkeleton from "../Skeletons/AdminBoardSkeleton";
 import NewEvent from "./DisplayEvents/NewEvent";
 import EditEvent from "./DisplayEvents/EditEvent";
 import DeleteEvent from "./DisplayEvents/DeleteEvent";
 import Toolbar from "./DisplayEvents/Toolbar/Toolbar";
+import FullPageLoader from "../../Loaders/FullPageLoader";
 
 const SetEventsBoard = () => {
   return (
@@ -20,7 +20,7 @@ const SetEventsBoard = () => {
         <NewEvent />
         <EditEvent />
         <DeleteEvent />
-        <Suspense fallback={<AdminBoardSkeleton />}>
+        <Suspense fallback={<FullPageLoader />}>
           <DisplayEvents />
         </Suspense>
       </div>

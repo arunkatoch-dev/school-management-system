@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getEvents } from "../../../../slices/eventsBoardSlice";
-import BoardSkeleton from "../../../Skeletons/Boards/BoardSkeleton";
+import FullPageLoader from "../../../Loaders/FullPageLoader";
 
 const EventsBoard = () => {
   const events = useSelector((state) => state.eventsBoard.events);
@@ -20,7 +20,7 @@ const EventsBoard = () => {
   return (
     <>
       {isEventsLoading ? (
-        <BoardSkeleton />
+        <FullPageLoader />
       ) : (
         <section className="w-full md:w-[50%] h-[30rem] border flex flex-col items-center justify-center shadow-xl">
           <div className="w-full py-2 flex items-center justify-center bg-primary">

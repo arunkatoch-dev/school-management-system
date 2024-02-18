@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import { useDispatch, useSelector } from "react-redux";
 import {
   adminAdmissionPanelReducer,
@@ -152,7 +151,7 @@ const AdminAdmissionPreview = () => {
             </div>
             {/* +-+-+-+-+-+-+-+- */}
             <div className={headingsContainer}>
-              <span className={headingName}>Father's Name:</span>
+              <span className={headingName}>Fathers Name:</span>
               <span className={headingValue}>
                 {fatherName ? fatherName : "-"}
               </span>
@@ -182,7 +181,7 @@ const AdminAdmissionPreview = () => {
               </span>
             </div>
             <div className={headingsContainer}>
-              <span className={headingName}>Mother's Name:</span>
+              <span className={headingName}>Mothers Name:</span>
               <span className={headingValue}>
                 {motherName ? motherName : "-"}
               </span>

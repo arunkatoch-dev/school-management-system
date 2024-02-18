@@ -231,8 +231,7 @@ const AdminHomepage = () => {
             value={searchVal}
             onChange={(e) => {
               e.preventDefault();
-              // eslint-disable-next-line no-unused-vars
-              setSearchVal((searchVal) => e.target.value);
+              setSearchVal(e.target.value);
             }}
             placeholder="Enter here to Search"
             className="w-full px-2 tracking-widest py-2 text-gray-700 outline-none"

@@ -1,10 +1,11 @@
 import { Suspense, lazy } from "react";
-import AdminBoardSkeleton from "../Skeletons/AdminBoardSkeleton";
+// import AdminBoardSkeleton from "../Skeletons/AdminBoardSkeleton";
 const DisplayAdmissions = lazy(() =>
   import("./DisplayAdmissions/DisplayAdmissions")
 );
 import AdminAdmissionPreview from "./DisplayAdmissions/AdminAdmissionPreview";
 import { useSelector } from "react-redux";
+import FullPageLoader from "../../Loaders/FullPageLoader";
 
 const AdminAdmissions = () => {
   const toggleAdminAdmissionPanel = useSelector(
@@ -20,7 +21,7 @@ const AdminAdmissions = () => {
           </span>
         </div>
         {toggleAdminAdmissionPanel ? <AdminAdmissionPreview /> : null}
-        <Suspense fallback={<AdminBoardSkeleton />}>
+        <Suspense fallback={<FullPageLoader />}>
           <DisplayAdmissions />
         </Suspense>
       </div>

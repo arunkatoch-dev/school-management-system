@@ -8,19 +8,18 @@ const navlinksCss = "text-white font-primaryFont text-base hover:text-gray-200";
 const loginBtnCss =
   "flex items-center justify-center bg-secondary text-white px-5 py-2 rounded-lg hover:bg-teal-500 text-base";
 
+
 const Header = () => {
   const [mobileNavDisplay, setMobileNavDisplay] = useState(false);
   const loginStatus = useSelector((state) => state.authSlice.loginStatus);
   const isLogoutPending = useSelector(
     (state) => state.authSlice.isLogoutPending
   );
-
   const dispatch = useDispatch();
   const onMenuClickHandler = (e) => {
     e.preventDefault();
     setMobileNavDisplay((mobileNavDisplay) => !mobileNavDisplay);
   };
-
   useEffect(() => {
     dispatch(checkStudentLoginStatus());
   }, [dispatch]);

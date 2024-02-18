@@ -5,8 +5,9 @@ const DisplayNotificatons = lazy(() =>
 );
 import EditNotice from "./DisplayNotificatons/EditNotice";
 import NewNotification from "./DisplayNotificatons/NewNotification";
-import AdminBoardSkeleton from "../Skeletons/AdminBoardSkeleton";
+// import AdminBoardSkeleton from "../Skeletons/AdminBoardSkeleton";
 import Toolbar from "./DisplayNotificatons/Toolbar/Toolbar";
+import FullPageLoader from "../../Loaders/FullPageLoader";
 
 
 
@@ -24,7 +25,7 @@ const SetNoticeBoard = () => {
         <NewNotification />
         <EditNotice />
         <DeleteNotification />
-        <Suspense fallback={<AdminBoardSkeleton />}>
+        <Suspense fallback={<FullPageLoader />}>
           <DisplayNotificatons />
         </Suspense>
       </div>

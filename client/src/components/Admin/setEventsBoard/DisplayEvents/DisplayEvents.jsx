@@ -6,7 +6,8 @@ import {
   getEvents,
 } from "../../../../slices/eventsBoardSlice";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
-import AdminBoardSkeleton from "../../Skeletons/AdminBoardSkeleton";
+import FullPageLoader from "../../../Loaders/FullPageLoader";
+
 
 const DisplayEvents = () => {
   const { events, updateState, deleteState, isEventsLoading } = useSelector(
@@ -22,7 +23,7 @@ const DisplayEvents = () => {
   return (
     <div className="w-full h-full bg-gray-100 px-2 py-3 overflow-y-auto">
       {isEventsLoading ? (
-        <AdminBoardSkeleton />
+        <FullPageLoader />
       ) : (
         events.map((currEvent, index) => {
           return (
