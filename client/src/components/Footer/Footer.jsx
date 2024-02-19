@@ -77,7 +77,6 @@ const Footer = () => {
             <li>
               <NavLink
                 to="/admin"
-                target="_blank"
                 className="text-white font-bold hover:text-gray-200"
               >
                 Admin

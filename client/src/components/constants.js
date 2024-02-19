@@ -1,7 +1,7 @@
 export const baseURL = "https://school-management-system-dy5j.onrender.com/";
+export const frontEndURL = "https://school-management-system-umber.vercel.app/";
 // export const baseURL = "http://localhost:8080/";
 // export const frontEndURL = "http://localhost:5173/";
-export const frontEndURL = "https://school-management-system-umber.vercel.app/";
 export const schoolName = "Model Public School";
 export const newAdmissionComponentStyles = {
   inputOuterContainer:
